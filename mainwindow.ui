@@ -1,0 +1,2933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>862</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestion des Clients</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0,0,0)</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>841</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:   rgb(0,0,0);
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>7</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLabel" name="label_nom_voyageur">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>20</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,206,209);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string> Nom Voyageur :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_cin_voyageur">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>140</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,206,209);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>CIN Voyageur :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_pren_voyageur">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>80</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,206,209);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Prenom Voyageur :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_num_de_passeport">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>200</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color:rgb(0,206,209);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Num de Passeport :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_nomvoy">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>40</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>100</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>160</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>220</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_nom_voyageur_12">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>260</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,206,209);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>La classe :</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_HISTORIQUES_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>MENU</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_ajouter">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>380</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>AJOUTER</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="geometry">
+       <rect>
+        <x>312</x>
+        <y>279</y>
+        <width>191</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_destination">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>320</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,206,209);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string> Destination :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_destination">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>340</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QLabel" name="label_nom_voyageur_2">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>140</y>
+        <width>571</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color:  rgb(240,128,128);
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Veillez saisir le CIN du voyageur à supprimer :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="id_supp">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>160</y>
+        <width>231</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_HISTORIQUES_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>MENU</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_supprimer">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>260</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>supprimer</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QPushButton" name="pushButton_HISTORIQUES_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>MENU</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tab_voyageurs">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>591</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FFFFFF;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_pdf">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>PDF</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushb_qrcode">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>QRCODE</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>656</x>
+        <y>90</y>
+        <width>171</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QStackedWidget" name="stackedWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>851</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:   rgb(0,0,0);
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_6">
+       <widget class="QLabel" name="label_nom_voyageur_11">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>20</y>
+          <width>301</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,0,255);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string> Nom Voyageur :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_cin_voyageur_2">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>140</y>
+          <width>301</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>CIN Voyageur :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_pren_voyageur_2">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>80</y>
+          <width>301</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Prenom Voyageur :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_num_de_passeport_3">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>200</y>
+          <width>301</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color:rgb(0,0,255);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Num de Passeport :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NOM_VOY">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>40</y>
+          <width>171</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_PRENOM_VOY">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>90</y>
+          <width>151</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_CIN_VOY">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>150</y>
+          <width>181</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NUM_PASSEPORT">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>210</y>
+          <width>151</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_voyageur_14">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>260</y>
+          <width>301</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,0,255);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>La classe :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_CLASSE_VOY">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>270</y>
+          <width>211</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_HISTORIQUES_12">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>131</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+          <underline>false</underline>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+        </property>
+        <property name="text">
+         <string>MENU</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pb_modifier">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>380</y>
+          <width>131</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+          <underline>false</underline>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+        </property>
+        <property name="text">
+         <string>modifier</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_Destination">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>320</y>
+          <width>301</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(0,0,255);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string> Destination :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_DESTINATION">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>340</y>
+          <width>181</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_7">
+       <widget class="QLabel" name="label_nom_voyageur_15">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>140</y>
+          <width>571</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(240,128,128);
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Veillez saisir le CIN du voyageur à supprimer :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NOM_EV_25">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>160</y>
+          <width>231</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_voyageur_16">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>240</y>
+          <width>151</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(178,34,34);
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>    SUPPRIMER</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_8">
+       <widget class="QLabel" name="label_nom_voyageur_17">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>321</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(240,128,128);
+
+	color: #000000;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string> Nom Voyageur :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_voyageur_18">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>70</y>
+          <width>311</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(240,128,128);
+
+	color: #000000;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string> Prenom Voyageur :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_voyageur_19">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>270</y>
+          <width>321</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(240,128,128);
+
+	color: #000000;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>La classe :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_voyageur_20">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>170</y>
+          <width>321</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(240,128,128);
+
+	color: #000000;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string> CIN Voyageur :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_voyageur_21">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>170</y>
+          <width>311</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(240,128,128);
+
+	color: #000000;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>E-mail :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_voyageur_22">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>270</y>
+          <width>311</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+background-color: rgb(240,128,128);
+
+	color: #000000;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Num de passeport :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NOM_EV_26">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>90</y>
+          <width>191</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NOM_EV_27">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>190</y>
+          <width>191</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NOM_EV_28">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>290</y>
+          <width>231</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NOM_EV_29">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>80</y>
+          <width>161</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NOM_EV_30">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>190</y>
+          <width>231</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_NOM_EV_31">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>290</y>
+          <width>161</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_9"/>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_10">
+     <widget class="QTableView" name="tableTri">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>371</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FFFFFF;</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_classe">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>30</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string> Classe :</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_num_passeport">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>60</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string> Num_passeport :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 700 10pt &quot;Segoe UI&quot;;
+text-decoration: underline;</string>
+      </property>
+      <property name="text">
+       <string>Choisir le type de TRI :</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_nom">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>0</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string> Nom :</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_trier">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>0</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Trier</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_HISTORIQUES_13">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>MENU</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>60</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 700 10pt &quot;Segoe UI&quot;;
+text-decoration: underline;</string>
+      </property>
+      <property name="text">
+       <string>Taper les elements à chercher :</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_chercher">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>0</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Chercher</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_chercher">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>160</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_nom_voyageur_23">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>110</y>
+        <width>291</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QLabel-----*/
+QLabel
+{
+	background-color: rgb(128,0,0);
+
+	color: #000000;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}</string>
+      </property>
+      <property name="text">
+       <string> le cin ou le nom ou la classe du voyageur </string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_11">
+     <widget class="QPushButton" name="pushButton_HISTORIQUES_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>MENU</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QTableView" name="table_histo">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>70</y>
+        <width>551</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FFFFFF;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_affiche_h">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>afficher histo</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_12">
+     <widget class="QPushButton" name="pushButton_HISTORIQUES_15">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>MENU</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_statistiques_2">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>statistiques</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="pushButton_ajouter">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>70</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color: rgb(128,0,0);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>AJOUTER UN VOYAGEUR</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../Downloads/calendrier.png</normaloff>../../../../Downloads/calendrier.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_supprimer">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>150</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color: rgb(128,0,0);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>SUPPRIMER UN VOYAGEUR</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_modifier">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>230</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(128,0,0);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>MODIFIER UN VOYAGEUR</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../Downloads/stat.png</normaloff>../../../../Downloads/stat.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_rech_tri">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>150</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color: rgb(240,128,128);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0,0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>       RECHERCHE+TRI</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../rechercher.png</normaloff>../rechercher.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_statistiques">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>230</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color: rgb(240,128,128);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>           STATISTIQUES</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../Downloads/stat.png</normaloff>../../../../Downloads/stat.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_historiques">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>70</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color: rgb(240,128,128);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>          HISTORIQUES</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_afficher">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>300</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color: rgb(128,0,0);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>AFFICHER UN VOYAGEUR </string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../rechercher.png</normaloff>../rechercher.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_HISTORIQUES_9">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color:  rgb(0,0,255);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>AIRCRAFTED</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../jour_j/archiver.png</normaloff>../../../jour_j/archiver.png</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_qr">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>300</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*-----QPushButton-----*/
+QPushButton
+{
+	background-color: rgb(240,128,128);
+
+
+
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: bold;
+	border: 5px;
+	border-radius:10px;
+	padding: 5px;
+
+}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 0, 150, 220),stop:1 rgba(50, 220, 200, 220));
+
+	color: #FF5D5D; 
+}
+QPushButton::pressed
+{background-color: qlineargradient(stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+	color: #FF5D5D; 
+
+}</string>
+      </property>
+      <property name="text">
+       <string>QR CODE</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../Downloads/stat.png</normaloff>../../../../Downloads/stat.png</iconset>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>862</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
