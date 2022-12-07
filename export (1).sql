@@ -1,0 +1,29 @@
+--------------------------------------------------------
+--  Fichier créé - jeudi-novembre-03-2022   
+--------------------------------------------------------
+DROP TABLE "SYSTEM"."TABLED";
+--------------------------------------------------------
+--  DDL for Table TABLED
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."TABLED" 
+   (	"DESTINATION" VARCHAR2(20 BYTE), 
+	"AEREPORT_DESTINEE" VARCHAR2(20 BYTE), 
+	"NUM_VOL" NUMBER, 
+	"MAT_AVION" VARCHAR2(20 BYTE), 
+	"DATE_HEURE_A" DATE, 
+	"DATE_HEURE_D" VARCHAR2(20 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SYSTEM.TABLED
+SET DEFINE OFF;
+--------------------------------------------------------
+--  Constraints for Table TABLED
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."TABLED" MODIFY ("DATE_HEURE_D" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."TABLED" MODIFY ("DATE_HEURE_A" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."TABLED" MODIFY ("AEREPORT_DESTINEE" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."TABLED" MODIFY ("DESTINATION" NOT NULL ENABLE);
