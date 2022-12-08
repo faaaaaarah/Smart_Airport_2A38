@@ -15,6 +15,7 @@
 #include "avion.h"
 #include "vol.h"
 #include <QPieSlice>
+#include "arduino.h"
 #include <QPieSeries>
 #include <QtCharts>
 #include <QApplication>
@@ -39,6 +40,25 @@
 #include <QFileDialog>
 #include <QDialog>
 #include "stat.h"
+#include "produit.h"
+#include "statis.h"
+#include "smtp.h"
+#include <QMessageBox>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QPainter>
+#include<QtPrintSupport/QPrinter>
+#include <QFileDialog>
+#include<QTextEdit>
+#include "qrcodegen.hpp"
+#include "notification.h"
+#include<QDebug>
+#include <QComboBox>
+#include <QDialog>
+#include <limits>
+#include <QPropertyAnimation>
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -46,6 +66,32 @@ MainWindow::MainWindow(QWidget *parent)
 {
     //affichage
     ui->setupUi(this);
+    ui->le_id->setValidator(new QIntValidator(1,1000, this));
+    ui->le_prix->setValidator(new QIntValidator(0 , 999 , this));
+    ui->le_stock->setValidator(new QIntValidator(1, 100, this));
+    QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
+    ui->le_type->setValidator(validator_String);
+    ui->tab_prod->setModel(P.afficher());
+    int ret=ar.connect_arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< ar.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<ar.getarduino_port_name();
+       break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+     QObject::connect(ar.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+     //le slot update_label suite à la reception du signal readyRead (reception des données).
+     int rett=A.connect_arduino(); // lancer la connexion à arduino
+     switch(rett){
+     case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+         break;
+     case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+        break;
+     case(-1):qDebug() << "arduino is not available";
+     }
+      QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+      //le slot update_label suite à la reception du signal readyRead (reception des données).
     this->ui->stackedWidget->setCurrentIndex(0);
     ui->tableView->setModel(e.afficher());
     ui->tableView_2->setModel(v.afficher());
@@ -175,7 +221,7 @@ void MainWindow::on_pushButton_8_clicked()
                            QPainter painter(&pdf);
                           int i = 4000;
 
-                                painter.drawPixmap(QRect(100,100,2500,2500),QPixmap("C:/Users/ABDOU/Desktop/project/1.png"));
+                                painter.drawPixmap(QRect(100,100,2500,2500),QPixmap("C:/logo.jpg"));
                                 painter.drawText(900,650,"Smart airport");
                                painter.setPen(Qt::red);
                                painter.setFont(QFont("Time New Roman", 25));
@@ -231,6 +277,10 @@ void MainWindow::on_pushButton_clicked()
         this->ui->stackedWidget->setCurrentIndex(2);
     }else if(nom=="farah"&&pass=="admin"){
         this->ui->stackedWidget->setCurrentIndex(3);
+    }else if(nom=="eya"&&pass=="admin"){
+        this->ui->stackedWidget->setCurrentIndex(4);
+    }else if(nom=="arduino1"&&pass=="admin"){
+        this->ui->stackedWidget->setCurrentIndex(5);
     }
     else{
         QMessageBox::critical(nullptr,QObject::tr("not ok"),
@@ -449,7 +499,7 @@ void MainWindow::on_pushButton_17_clicked()
                            QPainter painter(&pdf);
                           int i = 4000;
 
-                               painter.drawPixmap(QRect(100,100,2500,2500),QPixmap("C:/Users/ABDOU/Desktop/project/1.png"));
+                               painter.drawPixmap(QRect(100,100,2500,2500),QPixmap("C:/logo.jpg"));
                                painter.drawText(900,650,"Smart airport");
                                painter.setPen(Qt::red);
                                painter.setFont(QFont("Time New Roman", 25));
@@ -954,7 +1004,7 @@ void MainWindow::on_pushb_qrcode_clicked()
 
                                                   svgRenderer.render(&pixPainter);
 
-                                               ui->label_11->setPixmap(pix);
+                                                  ui->label_38->setPixmap(pix);
 
                                           }
 }
@@ -963,4 +1013,379 @@ void MainWindow::on_pushButton_qr_clicked()
 {
     ui->stackedWidget_2->setCurrentIndex(2);
 
+}
+
+void MainWindow::on_pushButton_HISTORIQUES_13_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(7);
+}
+
+void MainWindow::on_pushButton_25_clicked()
+{
+    this->ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_26_clicked()
+{
+    this->ui->stackedWidget->setCurrentIndex(0);
+}
+
+/////////////////////////////////////////////////////////////////////////////////// gestion produit /////////////////////////////////////////////
+void MainWindow::update_label()
+{
+    data=ar.read_from_arduino();
+    QSqlQuery query;
+
+    if(1)
+    {
+        data="111";
+                QString nom,mail;
+                query.prepare("select * from SUSPET where id='"+data+"' ");
+                if(query.exec())
+                {
+                    while(query.next())
+                    {
+                         nom=(query.value(0).toString());
+                         mail=(query.value(4).toString());
+
+                    }
+                    QTime current(14,00,00);
+                    QTime test=QTime::currentTime();
+                    qDebug ()<<test;
+                    if(current<test)
+                    {
+                    query.exec();
+                    QString tt=nom;
+                    QByteArray z=tt.toUtf8();
+                    Smtp* smtp = new Smtp("chedhly.ghorbel@esprit.tn", "211JMT9635", "smtp.gmail.com",465);
+                     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+
+                      smtp->sendMail(mail, mail, "retard", nom);
+                    ar.write_to_arduino(z);
+                }}
+    }
+            else
+                {
+            ar.write_to_arduino("WRONG\n");
+                }
+
+
+
+}
+
+
+void MainWindow::on_pb_ajouter_2_clicked()
+{
+    int id=ui->le_id->text().toInt();
+    QString type=ui->le_type->text();
+    QString mail=ui->mail->text();
+
+    float prix=ui->le_prix->text().toFloat();
+    int stock=ui->le_stock->text().toInt();
+    Produit P(id,type,prix,stock,mail);
+    notification n;
+    bool test=P.ajouter();
+    n.ajout_notification();
+    if(test){
+        QMessageBox::information(nullptr, QObject::tr("ok"),
+                    QObject::tr("ajout effectué.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+        ui->tab_prod->setModel(P.afficher());
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("not ok"),
+                    QObject::tr("ajout non effectué.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+    QString textajouter;
+    QSqlQuery qry;
+    qry.prepare("select * from APPAREILS");
+    textajouter="L'ajout d'un site a la base de donnees de nom = "+QString(type)+" a ete effectue avec succees";
+}
+
+int MainWindow::getselectedtran(){
+        int s=ui->tab_prod->selectionModel()->currentIndex().row();
+        QModelIndex index =ui->tab_prod->model()->index(s, 0,QModelIndex());
+        int aff=ui->tab_prod->model()->data(index).toString().toInt();
+        return aff;
+
+        }
+
+void MainWindow::on_pb_supprimer_2_clicked()
+{
+    QMessageBox::StandardButton reply =QMessageBox::information(this,"supprimer la liste","Etes-vous sur?",QMessageBox::Yes|QMessageBox::No);
+
+        if(reply == QMessageBox::Yes){
+    notification n;
+    int k=getselectedtran();
+    bool test=P.supprimer(k);
+    n.notification_supprimer();
+    if(test){
+        QMessageBox::information(nullptr, QObject::tr("ok"),
+                    QObject::tr("suppression effectué.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+        ui->tab_prod->setModel(P.afficher());
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("not ok"),
+                    QObject::tr("suppression non effectué.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+}
+
+        QString textajouter;
+        QSqlQuery qry;
+        qry.prepare("select * from APPAREILS");
+        textajouter="La suppression d'une client a la base de donnees d ID = "+QString(P.gettype())+" a ete effectue avec succees";
+
+}
+
+
+void MainWindow::on_UpdateTran_clicked()
+{
+    int id=ui->le_id->text().toInt();
+    QString type=ui->le_type->text();
+    int prix=ui->le_prix->text().toInt();
+    int stock=ui->le_stock->text().toInt();
+    QString mail=ui->mail->text();
+    Produit P(id,type,prix,stock,mail);
+    notification n;
+    bool test=P.ModifierProduit();
+    n.notification_modifier();
+    if(test){
+        QMessageBox::information(nullptr, QObject::tr("ok"),
+                    QObject::tr("Modificqtion effectué.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+        ui->tab_prod->setModel(P.afficher());
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("not ok"),
+                    QObject::tr("Modification non effectué.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+    QString textajouter;
+    QSqlQuery qry;
+    qry.prepare("select * from APPAREILS");
+    textajouter="La modification d'un site a la base de donnees du nom = "+QString(P.gettype())+" a ete effectue avec succees";
+}
+
+void MainWindow::on_rec_textChanged(const QString &arg1)
+{
+    ui->tab_prod->setModel(P.rechercher(arg1));
+}
+
+void MainWindow::on_pushButton_01_clicked()
+{
+    ui->tab_prod->setModel(P.TriCASC());
+}
+
+void MainWindow::on_pushButton_02_clicked()
+{
+    ui->tab_prod->setModel(P.TriCDESC());
+}
+void MainWindow::on_pushButton_03_clicked()
+{
+    ui->tab_prod->setModel(P.TriDASC());
+
+}
+
+void MainWindow::on_pushButton_04_clicked()
+{
+    ui->tab_prod->setModel(P.TriDDESC());
+
+}
+
+void MainWindow::on_pushButton_05_clicked()
+{
+    ui->tab_prod->setModel(P.TriEASC());
+
+}
+
+void MainWindow::on_pushButton_06_clicked()
+{
+    ui->tab_prod->setModel(P.TriEDESC());
+
+}
+
+void MainWindow::on_Statistique_clicked()
+{
+    statistiques s;
+    s.exec();
+}
+
+void MainWindow::on_pb_print_clicked()
+{
+    QString str;
+    str.append("<html><head></head><body><center>"+QString());
+    str.append("<table border=1><tr>") ;
+    str.append("<td>"+QString("ID")+"</td>") ;
+    str.append("<td>"+QString("type")+"</td>") ;
+    str.append("<td>"+QString("prix")+"</td>") ;
+    str.append("<td>"+QString("stock")+"</td>") ;
+    QSqlQuery* query=new QSqlQuery();
+    query->exec("SELECT* FROM Produit");
+
+    while(query->next())
+    {
+    str.append("<tr><td>");
+    str.append(query->value(0).toString()) ;
+    str.append("</td><td>") ;
+    str.append(query->value(1).toString());
+    str.append("</td><td>") ;
+    str.append(query->value(2).toString());
+    str.append("</td><td>") ;
+    str.append(query->value(3).toString());
+
+    }
+    str.append("</table></center></body></html>") ;
+
+    QPrinter printer ;
+    printer.setOrientation(QPrinter::Portrait);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+
+    printer.setPaperSize(QPrinter::A4) ;
+
+    QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","C:/Users/PC/Desktop","PDF(*.pdf)");
+
+    if (path.isEmpty()) return ;
+    printer.setOutputFileName(path) ;
+    QTextDocument doc;
+    doc.setHtml(str) ;
+    doc.print(&printer);
+    QMessageBox::information(nullptr,QObject::tr("Creation PDF"),QObject::tr("PDF crée .\n"
+                                                                                       "Click Cancel to exit ."),QMessageBox::Cancel);
+
+}
+
+void MainWindow::on_pushButton_24_clicked()
+{
+    // data=a.read_from_arduino();
+     QSqlQuery query;
+
+     if(1)
+     {
+         QString tt=QString(data);
+         tt="111";
+                 QString nom,mail;
+                 QTime current(9,00,00);
+                 QTime test=QTime::currentTime();
+                 qDebug ()<<test;
+                 QString now =test.toString(QString ("hh:mm:ss .zzz"));
+                 QString ten =current.toString(QString ("hh:mm:ss .zzz"));
+
+                 if(current<test)
+                 {
+                 query.prepare("select * from Produit where id='"+tt+"' ");
+                 if(query.exec())
+                 {
+                     while(query.next())
+                     {
+                          nom=(query.value(0).toString());
+                          mail=(query.value(4).toString());
+
+                     }
+                     query.exec();
+                     QString tt="you were supposed to come at "+ten+"\nyou came at "+now;
+                     QByteArray z=nom.toUtf8();
+
+                     Smtp* smtp = new Smtp("chedhly.ghorbel@esprit.tn", "211JMT9635", "smtp.gmail.com",465);
+                      connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+
+                       smtp->sendMail(mail, mail, "retard", tt);
+                     ar.write_to_arduino(z);//Serail.readString()//afficheur : lcd.Serailprint(Serial.readString())
+                 }}
+     }
+             else
+                 {
+             ar.write_to_arduino("WRONG\n");
+                 }
+
+}
+
+void MainWindow::on_tab_prod_activated(const QModelIndex &index)
+{
+    QString val=ui->tab_prod->model()->data(index).toString();
+        QSqlQuery qry;
+        qry.prepare("select * from Produit where id='"+val+" ' ");
+        if(qry.exec())
+        {
+            while(qry.next())
+            {
+                ui->le_id->setText(qry.value(0).toString());
+                ui->le_prix->setText(qry.value(1).toString());
+                ui->le_type->setText(qry.value(2).toString());
+                ui->le_stock->setText(qry.value(3).toString());
+                ui->mail->setText(qry.value(4).toString());
+
+
+
+            }
+
+        }
+        else
+        {
+            QMessageBox::critical(nullptr, QObject::tr("selection n'est pas effuctué"),  QObject::tr("connection failed.\n" "Click Cancel to exit."), QMessageBox::Cancel);
+        }
+        // a coninuer
+
+             QString text ="Produit details :"+ ui->tab_prod->model()->data(ui->tab_prod->model()->index(ui->tab_prod->currentIndex().row(),1)).toString()
+                     +" "+ui->tab_prod->model()->data(ui->tab_prod->model()->index(ui->tab_prod->currentIndex().row(),2)).toString()
+                     +" "+ui->tab_prod->model()->data(ui->tab_prod->model()->index(ui->tab_prod->currentIndex().row(),3)).toString()
+                     +" "+ui->tab_prod->model()->data(ui->tab_prod->model()->index(ui->tab_prod->currentIndex().row(),4)).toString();
+             //text="user data";
+             using namespace qrcodegen;
+               // Create the QR Code object
+               QrCode qr = QrCode::encodeText( text.toUtf8().data(), QrCode::Ecc::MEDIUM );
+               qint32 sz = qr.getSize();
+               QImage im(sz,sz, QImage::Format_RGB32);
+                 QRgb black = qRgb(  0,  0,  0);
+                 QRgb white = qRgb(255,255,255);
+               for (int y = 0; y < sz; y++)
+                 for (int x = 0; x < sz; x++)
+                   im.setPixel(x,y,qr.getModule(x, y) ? black : white );
+               ui->qr->setPixmap( QPixmap::fromImage(im.scaled(100,100,Qt::KeepAspectRatio,Qt::FastTransformation),Qt::MonoOnly) );
+}
+/////////////////////////////////////////////////////////////////////// arduino mohamed naim /////////////////////////////////
+void MainWindow::on_pushButton_27_clicked()
+{
+    A.write_to_arduino("1"); //envoyer 1 à arduino
+    i++;
+}
+void MainWindow::update_labell()
+{
+    set=A.read_from_arduino();
+    ui->label_3->setNum(i);
+
+    if(set=="1"){
+        //wait=1;
+        inc=1;
+        ui->label_49->setText("Un employee est à la porte"); // si les données reçues de arduino via la liaison série sont égales à 1
+        // alors afficher UN CLLIENT
+        //ui->label_3->setNum(i);
+        ui->pushButton->setEnabled(true);
+
+     }
+    else
+    {
+     ui->label_49->setText("Pas d'employee");   // si les données reçues de arduino via la liaison série sont égales à 0
+     //alors afficher PAS DE CLIENT
+     ui->pushButton->setEnabled(false);
+    }
+//    while(inc ){
+//        i++;
+//        //inc=0;
+//    }
+
+
+}
+
+void MainWindow::on_pushButton_28_clicked()
+{
+    this->ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_29_clicked()
+{
+    this->ui->stackedWidget->setCurrentIndex(0);
 }

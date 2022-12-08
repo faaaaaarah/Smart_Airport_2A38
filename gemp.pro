@@ -1,6 +1,20 @@
 QT       += core gui sql
 QT       += charts\
 
+QT       += core gui sql printsupport widgets charts
+QT       += core gui
+QT       += core gui sql
+QT       += svg
+QT       += printsupport
+QT       += widgets charts
+QT       +=  sql
+QT       += core gui charts
+
+QT       += core gui sql
+QT += sql
+QT       += core gui sql printsupport
+QT       += core gui network
+QT       += core gui sql multimedia printsupport serialport
 
 QT       += core gui sql printsupport widgets charts
 QT += serialport
@@ -36,11 +50,15 @@ SOURCES += \
     historique.cpp \
     main.cpp \
     mainwindow.cpp \
+    notification.cpp \
+    produit.cpp \
     qrcode.cpp \
+    qrcodegen.cpp \
     qrcodegeneratedemo.cpp \
     qrcodegenerateworker.cpp \
     smtp.cpp \
     stat.cpp \
+    statis.cpp \
     vol.cpp \
     voyageur.cpp
 
@@ -51,15 +69,20 @@ HEADERS += \
     employee.h \
     historique.h \
     mainwindow.h \
+    notification.h \
+    produit.h \
     qrcode.h \
+    qrcodegen.hpp \
     qrcodegenerateworker.h \
     smtp.h \
     stat.h \
+    statis.h \
     vol.h \
     voyageur.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    statis.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
